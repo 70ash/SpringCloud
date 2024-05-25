@@ -1,0 +1,18 @@
+server:
+  port: 10001
+spring:
+  rabbitmq:
+    host: 8.137.150.98
+    username: admin
+    password: zlpen9hth
+    port: 5672
+    virtual-host: my_vhost
+    connection-timeout: 1s # MQ的连接超时的时间
+#    publisher-confirm-type: correlated # 启用生产者确认
+    template:
+      retry:
+        enabled: true # 开启MQ的连接重试机制
+        initial-interval: 1000ms # 失败后重试的等待时间
+        multiplier: 2 # 重试的等待时间的倍数，下次失败后等待时长 = initial-interval * multiplier
+        max-attempts: 4 # 最大连接次数，超过这个次数就不再重试
+

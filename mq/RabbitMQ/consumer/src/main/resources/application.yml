@@ -1,0 +1,15 @@
+server:
+  port: 10002
+
+spring:
+  rabbitmq:
+    host: 8.137.150.98
+    username: admin
+    password: zlpen9hth
+    port: 5672
+    virtual-host: my_vhost
+    listener:
+      simple:
+        acknowledge-mode: auto
+        retry:
+          enabled: true
